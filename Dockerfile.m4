@@ -1,6 +1,6 @@
 # freeling
 
-FROM debian:jessie
+FROM debian:stretch
 
 MAINTAINER Hernán 'herchu' Foffani <hfoffani@gmail.com>
 
