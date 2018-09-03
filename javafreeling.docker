@@ -1,0 +1,7 @@
+
+COPY APIs/ /home/APIs
+
+RUN ln -s /usr/lib/jvm/java-1.8.0-openjdk-amd64 /usr/lib/jvm/default-java
+
+RUN cd /home/APIs/java && \
+    make

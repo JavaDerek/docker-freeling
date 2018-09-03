@@ -1,0 +1,3 @@
+sudo echo "А дело бывало -- и коза волка съедала." | sudo docker run -i herchu/freeling4-es:v0 /usr/bin/analyze -f ru.cfg
+
+sudo docker run -p 50005:50005 herchu/freeling4-es:v0 &

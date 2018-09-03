@@ -7,7 +7,8 @@ DOCKERCFG=dependencies.docker freeling.docker locale.docker
 
 
 Dockerfile-es: Dockerfile.m4 $(DOCKERCFG) python.docker pyfreeling.docker es-config.docker
-	svn export --force -q https://github.com/TALP-UPC/FreeLing.git/tags/4.0-beta1/APIs/common APIs/common
+	svn export --force -q https://github.com/TALP-UPC/FreeLing.git/tags/4.1/APIs/common APIs/common
+	svn export --force -q https://github.com/TALP-UPC/FreeLing.git/tags/4.1/APIs/java APIs/java
 	m4 Dockerfile.m4 > Dockerfile-es
 
 build-es: Dockerfile-es
