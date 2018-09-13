@@ -4,3 +4,7 @@ Dockerfile*
 build-*
 squash-??
 APIs/*
+*.class
+*.jar
+*.gz
+target
