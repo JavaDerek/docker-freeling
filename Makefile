@@ -1,6 +1,6 @@
 
 MPATH=/usr/local/opt/gnu-tar/libexec/gnubin:$(PATH)
-IMAGE=herchu/freeling4
+IMAGE=dotnetderek/freeling41
 BUILDTAG=v0
 PUBLITAG=pub
 DOCKERCFG=dependencies.docker freeling.docker locale.docker
@@ -12,7 +12,7 @@ Dockerfile-es: Dockerfile.m4 $(DOCKERCFG) python.docker pyfreeling.docker es-con
 	m4 Dockerfile.m4 > Dockerfile-es
 
 build-es: Dockerfile-es
-	docker build -t $(IMAGE)-es:$(BUILDTAG) -f Dockerfile-es .
+	docker build -t $(IMAGE)-ru:$(BUILDTAG) -f Dockerfile-es .
 	touch build-es
 
 
@@ -24,7 +24,7 @@ clean:
 squash-es: build-es
 	$(eval IMAGEID = $(shell docker images -q $(IMAGE)-es:$(BUILDTAG))) \
 	docker save $(IMAGEID) | \
-	PATH=$(MPATH) sudo docker-squash -t $(IMAGE)-es:$(PUBLITAG) |  \
+	PATH=$(MPATH) sudo docker-squash -t $(IMAGE)-ru:$(PUBLITAG) |  \
 	docker load
 	touch squash-es
 

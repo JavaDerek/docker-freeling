@@ -95,10 +95,18 @@ public class FreelingSocketClient implements RequestHandler<SQSEvent, Void> {
         // todo: Replace string with SQS body
         // todo: Do something with output other than console
         
-        //FreelingSocketClient server = new FreelingSocketClient("localhost", 50005);
-        //String s1 = server.processSegment("А дело бывало -- и коза волка съедала.");
-        //System.out.println(s1);	   
-        //server.close();
+        FreelingSocketClient server = new FreelingSocketClient("ip-172-31-0-222.us-east-2.compute.internal", 50005);
+        try
+        {
+            String s1 = server.processSegment("А дело бывало -- и коза волка съедала.");
+            System.out.println(s1);	   
+            server.close();
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+        
 
         for(SQSMessage msg : event.getRecords()){
             System.out.println(new String(msg.getBody()));
